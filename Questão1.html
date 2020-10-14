@@ -1,0 +1,42 @@
+<!-- 1) Crie uma página que tenha uma caixa de texto que só aceita números e tenha o rótulo (label). A
+página deve ainda possuir um botão calcular que quando acionado deve calcular o fatorial do número
+digitado, imprimido o resultado na mesma página. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title> Questão 1 AIA1 - Aplicações na internet </title>
+</head>
+<body>
+   <style>
+   div.a {
+     text-align: center;
+   }
+   h1 {
+      text-decoration: underline;
+   }
+   </style>
+   	<div class="a">	<h1> Cálculo de fatorial </h1> 	</div>
+   <label>Digite um número:<input type="number" id="input"/></label>
+   <button onclick="calculoFatorial()">Calcular</button>
+   <p>Resultado: </p>
+   <p id="resultado"> </p>
+   
+   <script>
+        function calculoFatorial() {
+            var numero = parseInt(document.getElementById("input").value);
+            document.getElementById("resultado").innerHTML = fatorial(numero);
+        }
+        function fatorial(numero) {
+            if (numero < 0) {
+                return "O número deve ser maior ou igual a zero!";
+            } else if (numero == 0 || numero == 1) {
+	return 1;
+            } else {	
+                return (numero * fatorial(numero - 1));
+            }
+        }
+  	  </script>
+</body>
+</html>
