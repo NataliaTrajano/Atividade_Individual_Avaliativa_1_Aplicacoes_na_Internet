@@ -1,0 +1,106 @@
+<!-- 3) Crie uma página que apresenta o resultado da tabuada de 2 a 10. No formato numero1 x
+numero2 =valor. Cada tabuada deve ser escrita com cor e tamanho de fonte diferente. Utilize
+HTML, CSS e Javascript. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title> Questão 3 AIA1 - Aplicações na internet </title>
+<style>
+   div.a {
+      text-align: center;          
+   }
+   format{
+       text-decoration: underline;
+       font-weight: bold;
+   }
+   tab2{
+       color: #6959CD;
+       font-size: 12px;
+   }
+   tab3{
+       color:#00CED1;
+       font-size: 14px;
+   }
+   tab4{
+       color:#32CD32;
+       font-size: 16px;
+   }
+   tab5{
+       color:#DAA520;
+       font-size: 18px;
+   }
+   tab6{
+       color:#BC8F8F;
+       font-size: 20px;
+   }
+   tab7{
+       color:#D2691E;
+       font-size: 22px;
+   }
+   tab8{
+       color:#FF69B4;
+       font-size: 24px;
+   }
+   tab9{
+       color:#FF8C00;
+       font-size: 26px;
+   }
+   tab10{
+       color:#FFFF00;
+       font-size: 28px;
+   }
+   
+</style>
+</head>
+<body>
+<div class="a">	<h1><format> Tabuadas de 2 a 10 </format></h1></div> 
+
+<script>
+	var limite = 10;
+        function calcularTabuada(numero, limite){
+        for (var contador = 0; contador<=limite; contador++){
+            document.write(numero + " X " + contador + " = " + (numero * contador) + "<br>");                
+        } 
+    }
+
+    document.write("<tab2><format>Tabuada de 2: <br></format>" );
+    calcularTabuada(2,limite);
+    document.write("<br><br></tab2>");
+    
+    document.write("<tab3><format>Tabuada de 3: <br></format>");	
+    calcularTabuada(3,limite);
+    document.write("<br><br></tab3>");
+
+    document.write("<tab4><format>Tabuada de 4: <br></format>");	
+    calcularTabuada(4,limite);
+    document.write("<br><br></tab4>");
+
+    document.write("<tab5><format>Tabuada de 5: <br></format>");	
+    calcularTabuada(5,limite);
+    document.write("<br><br></tab5>");
+
+    document.write("<tab6><format>Tabuada de 6: <br></format>");	
+    calcularTabuada(6,limite);
+    document.write("<br><br></tab6>");
+
+    document.write("<tab7><format>Tabuada de 7: <br></format>");	
+    calcularTabuada(7,limite);
+    document.write("<br><br></tab7>");
+
+    document.write("<tab8><format>Tabuada de 8: <br></format>");	
+    calcularTabuada(8,limite);
+    document.write("<br><br></tab8>");
+
+    document.write("<tab9><format>Tabuada de 9: <br></format>");	
+    calcularTabuada(9,limite);
+    document.write("<br><br></tab9>");
+
+    document.write("<tab10><format>Tabuada de 10: <br></format>");	
+    calcularTabuada(10,limite);
+    document.write("<br><br></tab10>");
+
+</script>	
+</body>
+</html>
