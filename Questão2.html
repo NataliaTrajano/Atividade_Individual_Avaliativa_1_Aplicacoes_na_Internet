@@ -1,0 +1,70 @@
+<!-- 2) Crie uma página que peça para o aluno digitar sua nota de A1, A2 e A3. Calcule a média deste
+aluno, mostrando a média em vermelho se ele ficou reprovado e azul caso ele tenha passado. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title> Questão 2 AIA1 - Aplicações na internet </title>
+</head>
+<body>
+<style>
+   div.a {
+      text-align: center;          
+   }
+   h1{
+       text-decoration: underline;
+   }	
+   h5{
+       color:#FF0000;
+       background: #FFFF00;
+   }
+</style>
+	<div class="a">	<h1> Cálculo de média de notas de um aluno </h1>
+	<h5> Para o aluno ser aprovado, a média tem que ser maior do que 6!</h5>
+	<h3> Por favor digite notas entre 0 e 10:</h3>
+	<label>Nota da A1: <input type="number" id="notaA1" name="quantity" min="0" max="10" required></label><br><br>
+	<label>Nota da A2: <input type="number" id="notaA2" name="quantity" min="0" max="10" required/></label><br><br>
+    	<label>Nota da A3: <input type="number" id="notaA3" name="quantity" min="0" max="10" required/></label><br><br>
+    	<button onclick="calculoMedia()">Calcular</button>
+    	<h3>Resultado da média: </h3>
+	<p id="resultado"></p>
+    	<p id="situacao"></p>
+	</div>       
+<script> 
+    document.getElementById("notaA1").addEventListener("invalid", validacaoNotaA1);
+    document.getElementById("notaA2").addEventListener("invalid", validacaoNotaA2);
+    document.getElementById("notaA3").addEventListener("invalid", validacaoNotaA3);
+
+    function validacaoNotaA1(){
+    alert("Sua nota A1 está inválida! Você deve lançar uma nota entre 0 e 10.");
+    }
+    function validacaoNotaA2(){
+    alert("Sua nota A2 está inválida! Você deve lançar uma nota entre 0 e 10.");
+    }
+    function validacaoNotaA3(){
+    alert("Sua nota A3 está inválida! Você deve lançar uma nota entre 0 e 10.");
+    }
+
+    function calculoMedia() {
+        var notaA1 = parseFloat(document.getElementById("notaA1").value);
+        var notaA2 = parseFloat(document.getElementById("notaA2").value);
+        var notaA3 = parseFloat(document.getElementById("notaA3").value);
+        var media = 0;
+        media = (notaA1 + notaA2 + notaA3) / 3;
+        document.getElementById("resultado").innerHTML = media.toFixed(2); 
+        if (media >= 6 && media <= 10) {		
+                document.getElementById("situacao").style.color = "#00008B";
+                document.getElementById("situacao").innerHTML="Aluno aprovado!"; 
+            } else if (media >= 0 && media < 6){		
+                document.getElementById("situacao").style.color = "#FF0000";
+                document.getElementById("situacao").innerHTML="Aluno reprovado!";
+            }   
+            else {
+                document.getElementById("situacao").style.color = "#FF0000";
+	            document.getElementById("situacao").innerHTML="Média inválida!";
+            }   
+        }
+</script>
+</body>
+</html>
